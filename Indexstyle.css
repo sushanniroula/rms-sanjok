@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Acme');
+body{
+ margin: 0px;
+ padding: 0px;
+background-color:#a9838f;
+}
+
+.header {
+    background-color: #efd6d6;
+    height: 120px;
+    width: 100%;
+}
+ .logo img {
+    height: 120px;
+    width: 130px;
+    float: left;
+ }
+.orgname img{
+ padding-top: 18px;
+ padding-left:10px;
+}
+.menu{
+    height:25px;
+    background-color:red;
+    padding: 0px;
+}
+.menu ul li a{
+    text-decoration: none;
+    color:black;
+}
+.menu ul li{
+    float:left;
+    list-style: none;
+    padding-left:30px;
+}
+.menu ul{
+    position:relative;
+    padding: 0px;
+    display:block;
+    margin: 0px;
+}
+
+#content{
+    
+     background-color:#a9838f;
+}
+.footer{
+    height:37px;
+    background-color:#a16780;
+}
+.footinfo p a{
+ text-decoration: none;
+}
+.footinfo p{
+    margin: 0px;
+    line-height: 37px;
+}

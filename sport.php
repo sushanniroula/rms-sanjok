@@ -1,6 +1,80 @@
 <html>
-<body bgcolor="pink">
-<center><h1><a href="index1.html">back to home page...</a></h1></center>
+<style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: fade-in 0.5s ease-in-out;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        mark {
+            background-color: #ffc107;
+            color: #333;
+            padding: 2px 4px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .back-btn {
+            margin-bottom: 20px;
+        }
+
+        .back-btn a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-btn a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+<body>
+<div class="container">
+<div class="back-btn">
+            <a href="index1.html">Back to Home Page</a>
+        </div>
 <b><h1><mark>Introduction</mark></h1></b>
 
 <p><b><u>Sport</u></b> includes all forms of competitive physical activity or games which,through casual or organised participation, aim to use, maintain or improve physical ability and skills while providing enjoyment to participants, and in some cases, entertainment for spectators.Hundreds of sports exist, from those between single contestants, through to those with hundreds of simultaneous participants, either in teams or competing as individuals. In certain sports such as racing, many contestants may compete, simultaneously or consecutively, with one winner; in others, the contest (a match) is between two sides, each attempting to exceed the other. Some sports allow a "tie" or "draw", in which there is no single winner; others provide tie-breaking methods to ensure one winner and one loser. A number of contests may be arranged in a tournament producing a champion. Many sports leagues make an annual champion by arranging games in a regular sports season, followed in some cases by playoffs.</p>
@@ -64,5 +138,6 @@ Artifacts and structures suggest sport in China as early as 2000 BC. Gymnastics 
 A wide range of sports were already established by the time of Ancient Greece and the military culture and the development of sport in Greece influenced one another considerably. Sport became such a prominent part of their culture that the Greeks created the Olympic Games, which in ancient times were held every four years in a small village in the Peloponnesus called Olympia.</p>
 
 <p>Sports have been increasingly organised and regulated from the time of the ancient Olympics up to the present century. Industrialisation has brought increased leisure time, letting people attend and follow spectator sports and participate in athletic activities. These trends continued with the advent of mass media and global communication. Professionalism became prevalent, further adding to the increase in sport's popularity, as sports fans followed the exploits of professional athletes – all while enjoying the exercise and competition associated with amateur participation in sports. Since the turn of the 21st century, there has been increasing debate about whether transgender sportspersons should be able to participate in sport events that conform with their post-transition gender identity.</p>
+</div>
 </body>
 </html

@@ -1,228 +1,380 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-    
-<meta charset="UTF-8">
-    
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    
-<link rel="stylesheet" href="./css/homepage.css">
-<link rel="stylesheet" type="text/css" href="stylingimage.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .title img {
+            margin-right: 10px;
+        }
+
+        .heading {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Navigation */
+        .nav {
+            margin-bottom: 20px;
+        }
+
+        .nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav li {
+            margin-right: 20px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+            padding: 10px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+        }
+
+        .nav a:hover {
+            color: #ff6600;
+            background-color: #fff;
+            border-color: #ff6600;
+        }
+
+        /* Slider */
+        #slider {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .slides {
+            display: none;
+            width: 100%;
+        }
+
+        .slides:first-child {
+            display: block;
+        }
+
+        .btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .btn:hover {
+            color: #ff6600;
+        }
+
+        #btn1 {
+            left: 10px;
+        }
+
+        #btn2 {
+            right: 10px;
+        }
+
+        /* Main Content */
+        .main {
+            margin-bottom: 20px;
+        }
+
+        .main span {
+            font-size: 20px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .info div {
+            width: 23%;
+            background-color: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .info div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .info span {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .info hr {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        .info p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer--contact p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .footer--info a {
+            margin-left: 10px;
+        }
+
+        .footinfo {
+            text-align: center;
+            padding: 10px;
+            background-color: #f9f9f9;
+            color: #666;
+        }
+
+        /* Scroll Animation */
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            flex-direction: column;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .nav li {
+                margin-right: 10px;
+            }
+
+            .nav a {
+                padding: 8px;
+            }
+        }
+    </style>
     <title>Homepage</title>
-
 </head>
 
-<body background="Image/home.jpg">
-    
-<div class="container">
-        
-<div class="title"> 
-        
-    <img src="Image/clzlogo.jpg" height="70" width="100">                  
-<span class="heading">Damak Multiple Campus</span><br>
+<body>
+    <div class="container">
+        <div class="title">
+            <img src="Image/clzlogo.jpg" height="70" width="100">
+            <span class="heading">Damak Multiple Campus</span>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="index1.html">Home</a></li>
+                <li><a href="login1.php">Admin Login</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Faculties &nbsp;<span class="fa fa-angle-down"></span></a>
+                    <div class="dropdown-content">
+                        <a href="bb.php">Computer Engineering</a>
+                        <a href="arts.php">Arts</a>
+                        <a href="science.php">Science</a>
+                        <a href="commerce.php">Commerce</a>
+                        <a href="tech.php">Technology</a>
+                        <a href="sport.php">Sports</a>
+                    </div>
+                </li>
+                <li><a href="contactus.html">Contact Us</a></li>
+                <li><a href="login.php">View Result</a></li>
+            </ul>
+        </div>
 
-        
-</div>
-<center><h15 direction="center">Damak-9, Jhapa</h15><br>
-<h15 direction="center">Estd: 2038 <br>
-"Quality Assurance Accreditation (QAA) Certified Campus"</h15>
-</center>
-        
-<div class="nav">
-            
-<ul>
-                
-<li>
-                    
-<a href="index1.html">Home</a>
+        <div id="slider">
+            <img class="slides" src="Image/bb.jpg">
+            <img class="slides" src="Image/cc.jpg">
+            <img class="slides" src="Image/dd.jpg">
+            <button class="btn" onclick="plusIndex(-1)" id="btn1">&#10095;</button>
+            <button class="btn" onclick="plusIndex(1)" id="btn2">&#10094;</button>
+        </div>
 
-</li>
-                
-<li>
-                    
-<a href="login1.php">Admin Login</a>
-                
-</li>
-                
-<li class="dropdown" onclick="toggleDisplay('1')">
-                    
-<a href="#" class="dropbtn">Faculties &nbsp
-                        
-<span class="fa fa-angle-down">
-</span>
-                    
-</a>
-                    
-<div class="dropdown-content" id="1">
-
-<a href="bb.php">Computer Engineering</a>                        
-<a href="arts.php">Arts</a>
-                        
-<a href="science.php">Science</a>
-                        
-<a href="commerce.php">Commerce</a>
-                        
-<a href="tech.php">Technology</a>
-                        
-<a href="sport.php">Sports</a>
-
-                    
-</div>
-                
-</li>
-                
-<li>
-                    
-<a href="contactus.html">Contact Us</a>               
-</li>
-<li>
-                    
-<a href="login.php">View Result</a>
-                
-</li>
-                        
-</ul>
-        
-</div>
-
-
-<marquee behavior="scroll" bgcolor="green" direction="left" width="100%" height="200%" >नव वर्ष २०८० सालको अवसरमा प्राध्यापक,कर्मचारी ,विद्यार्थी अभिभावकहरुमा हार्दीक मंगलमय शुभकामना व्यक्त गर्दछौ । दमक बहुमुखी क्याम्पस परिवार
-</marquee>
-        
-<div id="slider">
-       <img class="slides" src="Image/bb.jpg">
-       <img class="slides" src="Image/cc.jpg">
-       <img class="slides" src="Image/dd.jpg">
-       <button class="btn" onclick="plusIndex(-1)" id="btn1">&#10095;</button>
-        <button class="btn" onclick="plusIndex(+1)"  id="btn2">&#10094;</button>
-
-        
-</div>
-    
-        
-<div class="main"> <br><br><br> <br><br><br> <br><br><br> 
-            <center><span>About the College</span>
-            
-<p>Damak Multiple Campus is a QAAAccredited community-based campus. <br>It lies in Damak, Jhapa, Nepal and is affiliated to Tribhuvan University. It <br>is completely supported and managed by the community. 
-    With affiliation <br>from HSEB it offers 10+2 program in Science, Management, Humanities and Education.</p>
-</center><div class="info">
-                
-<div>
-    <br><br><br> <br><br><br>                 
-<span>Courses</span> 
-<hr>
-                    
-<p>BBS <br>
-   BA<br>
-   B.Ed<br>
-   BSW<br>
-   BCA <br>
-   BBA </p>
-</div>
-                
-<div>
-    <br><br><br> <br><br><br>                  
-<span>Admissions</span> 
-<hr>
-                    
-<p>You can get admissions form on the beginning of the session. For further information plz contact collage administration or any other responsible teachers,staffs anytime.</p>
-                
-</div>
-                
-<div>
-    <br><br><br> <br><br><br>               
-<span>Library</span> 
-<hr>
-                    
-<p>Damak Multiple Campus have its own well established library with many facilities.The library section is 24 hour secure with cctv protection and all the coursed books as well as out books can be found here</p>
+        <div class="main">
+            <span>About the College</span>
+            <p>Damak Multiple Campus is a QAA Accredited community-based campus. It lies in Damak, Jhapa, Nepal and is
+                affiliated to Tribhuvan University. It is completely supported and managed by the community. With
+                affiliation from HSEB, it offers 10+2 programs in Science, Management, Humanities, and Education.</p>
+           <br/> <div class="info">
+                <div class="scroll-fade">
+                    <span>Courses</span>
+                    <hr>
+                    <p>BSc.CSIT<br>
+                        BA<br>
+                        B.Ed<br>
+                        MBS</p>
                 </div>
-                
-<div>
-    <br><br><br> <br><br><br>        
-<span>Campus Region</span> 
-<hr>
-                    
-<p>Welcome to Campus, our campus give quality education to the students.students can select their facilities according to thier wish and will .Campus area is always under the vision of cctv.</p>
-                
-</div>
-            
-</div>
-        
-</div>
+                <div class="scroll-fade">
+                    <span>Facilities</span>
+                    <hr>
+                    <p>Library<br>
+                        Computer Lab<br>
+                        Science Lab<br>
+                        Sports</p>
+                </div>
+                <div class="scroll-fade">
+                    <span>Faculty Members</span>
+                    <hr>
+                    <p>25+ Experienced Faculties</p>
+                </div>
+                <div class="scroll-fade">
+                    <span>Events</span>
+                    <hr>
+                    <p>Seminar<br>
+                        Workshops<br>
+                        Cultural Programs</p>
+                </div>
+            </div>
+        </div>
 
-        
-<div class="footer">
-            
-<div class="footer--contact">
-                
-<span>Contact Us</span>
-                
-<p>dhunganasanjok99@gmail.com</p>
-                
-<p>9814052423(Ncell)</p>
-          
-</div>
-            
-<div class="footer--info">
-                
-<span>Important Links</span>
-                
-<a href="index1.html">Home</a>
-                
-<a href="login1.php">Admin Login</a>
-                
-<a href="login.php">Results</a>
-<a href="index1.html"><img src="Image/top.png" height="30" width="30">Back to top</a>
-            
-</div>
-        
-</div>
-
-</div>
-<div class="footer">
+        <div class="footer">
+            <div class="footer--contact">
+                <p>Contact Us:</p>
+                <p>+977-23-580695</p>
+            </div>
+            <div class="footer--info">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
         <div class="footinfo">
-          <center> Copyright &copy 2023 All Right Reserved. Designed by:<b> Sanjok Dhungana 
-          </center>
+            <p>&copy; 2023 Damak Multiple Campus. All Rights Reserved.</p>
         </div>
     </div>
 
-</body>
-<script>
-        var index = 1;
-       function plusIndex(n){
-           index=index + n;
-           showImage(index);
-       }
-       showImage(1);
-       function showImage(n){
-           var i;
-           var x = document.getElementsByClassName("slides");
-           if(n>x.length){index = 1};
-           if(n<1){index= x.length};
-           for(i=0;i<x.length;i++)
-               {
-                   x[i].style.display="none";
-               }
-           x[index-1].style.display="block";
-       }
-       autoSlide();
-       function autoSlide(){
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusIndex(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
             var i;
-            var x = document.getElementsByClassName("slides");
-             for(i=0;i<x.length;i++)
-               {
-                   x[i].style.display="none";
-               }
-           if(index >x.length){index=1}
-           x[index-1].style.display="block";
-           index++;
-            setTimeout(autoSlide,1500);
-       }
-        </script>
+            var slides = document.getElementsByClassName("slides");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        window.addEventListener('scroll', scrollAppear);
+
+        function scrollAppear() {
+            var elements = document.querySelectorAll('.scroll-fade');
+            for (var i = 0; i < elements.length; i++) {
+                var element = elements[i];
+                var position = element.getBoundingClientRect().top;
+                var windowHeight = window.innerHeight;
+
+                if (position < windowHeight * 0.8) {
+                    element.classList.add('fade-in');
+                }
+            }
+        }
+
+        function toggleDisplay(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "block") {
+                element.style.display = "none";
+            } else {
+                element.style.display = "block";
+            }
+        }
+    </script>
+</body>
 
 </html>

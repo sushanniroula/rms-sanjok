@@ -1,6 +1,81 @@
 <html>
-<body bgcolor="pink">
-<center><h1><a href="index1.html">back to home page...</a></h1></center>
+<body>
+<style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: fade-in 0.5s ease-in-out;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        mark {
+            background-color: #ffc107;
+            color: #333;
+            padding: 2px 4px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .back-btn {
+            margin-bottom: 20px;
+        }
+
+        .back-btn a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-btn a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+<div class="container">
+    <div>
+    <div class="back-btn">
+            <a href="index1.html">Back to Home Page</a>
+        </div>
 <b><h1><mark>Introduction</mark></h1></b>
 
 <p><b><u>Commerce</u></b> relates to <b>"the exchange of goods and services, especially on a large scale."</b>It includes legal, economic, political, social, cultural and technological systems that operate in a country or in international trade.</p>
@@ -20,5 +95,7 @@ Some commentators[which?] trace the origins of commerce to the very start of tra
 <p>During the Middle Ages, commerce developed in Europe through the trading of luxury goods at trade fairs. Some wealth became converted into movable wealth or capital.[citation needed] Banking systems developed where money on account was transferred[by whom?] across national boundaries.Hand-to-hand markets became a feature of town life, and were regulated by town authorities.</p>
 
 <p>Today commerce includes as a subset of itself a complex system of companies which try to maximize their profits by offering products and services to the market (which consists both of individuals and groups and other companies or institutions) at the lowest production cost. A system of international trade has helped to develop the world economy; but, in combination with bilateral or multilateral agreements to lower tariffs or to achieve free trade, has sometimes harmed third-world markets for local products (see Globalization.)</p>
+</div>
+</div>
 </body>
 </html>
